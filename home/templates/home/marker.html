@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
+
   <head>
+
+ <div class="inner">
+     <div style="background-color:lightblue">
+              <h3 class="masthead-brand"><center>OMK</center></h3>
+
+
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="{% url 'home:base' %}"><b>Home<b></a>
+                <a class="nav-link active" href="{% url 'home:about' %}">About Us</a>
+                <a class="nav-link" href="{% url 'home:login_user' %}">Login</a>
+                <a class="nav-link " href="{% url 'home:donation' %}">Donate</a>
+              </nav>
+     </div>
+ </div>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Directions service</title>
@@ -38,6 +52,8 @@
       }
     </style>
   </head>
+
+
   <body>
 <h1><br></br></h1>
 
@@ -136,6 +152,7 @@ marker.addListener('click', function() {
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZaZ_GQjzgL6zb0TBxztSGhPbdGL-3vNo&callback=initMap">
     </script>
   </body>
+
 </html>
 
 
