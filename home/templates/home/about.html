@@ -1,0 +1,64 @@
+{% load staticfiles %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>OMAHA MENTOR FOR KIDS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          
+            <div class="inner">
+              <h3 class="masthead-brand">OMK</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="{% url 'home:base' %}">Home</a>
+                <a class="nav-link active" href="{% url 'home:about' %}">About Us</a>
+                <a class="nav-link" href="{% url 'home:login_user' %}">Login</a>
+                  <a class="nav-link " href="{% url 'home:donation' %}">Donate</a>
+                <a class="nav-link" href="{% url 'home:location' %}">Locate Us</a>
+              </nav>
+            </div>
+          
+          <br class="container">
+           <br>
+            <br></br>
+          <p>Omaha Mentors for Kids Inc - Is a fictitious not-for-profit organization in Omaha Nebraska that provides mentoring for at-risk students in the Omaha Public Schools.</p>
+          <ul style="list-style-type:square">
+          <h3>Who we serve:</h3>
+            <p>Students who are at risk of dropping out from school.<p>
+          <h3>Why are students do well:</h3>
+             <p> We have mentors who will meet with the student on a regular basis and discuss goals the students have and for younger children teach them how to set personal goals.
+          They track student performance and arrange for homework and study help for the students to improve their performance in school.</p>
+          <h3>Who are our mentors:</h3>
+             <p> The Mentors are non-paid volunteers that are willing to help students</p>
+          <h3>How it works:</h3>
+             <p> The mentors and students meet one on one and discuss progress since last meeting, help the student might need in achieving their goals, celebrating goals that have been achieved and setting new goals </p>
+          <h3>What is our goal:</h3>
+             <p> The ultimate goal is to mentor the student so they graduate from high school and perhaps even goal into a 2 to 4 year college.  The mentors also help students apply for colleges and other training schools.</p>
+          </ul>
+              <br/>
+
+              <p>Contact Us at  <a href="omkidsorg@gmail.com">omkidsorg@gmail.com </a>.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </body>

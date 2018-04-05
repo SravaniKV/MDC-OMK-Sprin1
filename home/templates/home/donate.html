@@ -1,0 +1,67 @@
+{% load staticfiles %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>OMAHA MENTOR FOR KIDS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+
+            <div class="inner">
+              <h3 class="masthead-brand">OMK</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link" href="{% url 'home:base' %}">Home</a>
+                <a class="nav-link " href="{% url 'home:about' %}">About Us</a>
+                <a class="nav-link" href="{% url 'home:login_user' %}">Login</a>
+                  <a class="nav-link active" href="{% url 'home:donation' %}">Donate</a>
+                <a class="nav-link" href="{% url 'home:location' %}">Locate Us</a>
+              </nav>
+            </div>
+
+        <br class="container">
+           <br>
+            <br></br>
+            <br></br>
+
+            <ul style="list-style-type:square">
+          <h2>Donate</h2>
+            <p>Partnership 4 Kids is dedicated to keeping students engaged in learning from kindergarten to careers, but we need your help!
+                Without the generosity of supporters like you, our student programs could not exist. You can become a P4K contributing partner in a variety of ways, but regardless of how you choose to give, your contribution will keep more deserving students continuing on the pathway to success!</p>
+
+              <br/>
+            <p><strong>-- Click Donate button to make a Donation --</strong></p>
+            <ul style="list-style-type:square">
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="B2MCLL8XU7FWA">
+                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            </ul>
+           <br/>
+
+              <p>Contact Us at  <a href="omkidsorg@gmail.com">omkidsorg@gmail.com </a>.</p>
+
+        </div>
+      </div>
+
+    </div>
+
+  </body>

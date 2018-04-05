@@ -1,0 +1,39 @@
+{% extends 'home/index.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <h2 style="padding-left: 15Px">Students Report Information</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr class="bg-info">
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student Class</th>
+                <th>Student Prev Grade</th>
+                <th>Student Current Grade</th>
+                <th>Comments</th>
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for students in students %}
+                {% ifequal students.Men_name|stringformat:"s" user.username %}
+                <tr>
+                    <td>{{ students.Student_id }}</td>
+                    <td>{{ students.Student_name }}</td>
+                    <td>{{ students.Student_Class }}</td>
+                    <td>{{ students.Student_prev_grade }}</td>
+                    <td>{{ students.Student_curr_grade }}</td>
+                    <td>{{ students.Comments }}</td>
+                    <td><a href="{% url 'home:Student_Report_Edit' pk=students.pk%}" class="btn btn-warning">Edit</a>
+                </tr>
+                {% endifequal %}
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

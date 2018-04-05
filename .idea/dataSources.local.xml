@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="d1csf26c8gfpif@ec2-50-19-113-219.compute-1.amazonaws.com" uuid="1f1a724b-8c6d-4f14-bf84-b5390f7ffc63">
+      <database-info product="PostgreSQL" version="9.6.4" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>jcouimvnchyfxn</user-name>
+      <introspection-schemas>d1csf26c8gfpif:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

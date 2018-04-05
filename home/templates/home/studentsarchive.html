@@ -1,0 +1,9 @@
+{% extends 'home/empindex.html' %}
+
+{% block content %}
+    <h1>Archive Student</h1>
+    <form method="POST" class="student-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Update</button>
+    </form>
+{% endblock %}

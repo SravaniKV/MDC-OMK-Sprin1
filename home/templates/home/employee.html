@@ -1,0 +1,111 @@
+{% load staticfiles %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+	
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+</head>
+<body>
+{% if user.is_authenticated %}
+<div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+		<header class="masthead clearfix">
+            <div class="inner">
+				<div class="jumbotron">
+							<h1 class="masthead-brand" style="text-align: center; href="">Omaha Mentor for Kids</h1>
+							<div style="text-align: right;">
+				<p> Hello {{user.username}} </p>	
+			  	<!--<button type="button" class="btn btn-secondary"  href="{% url 'home:logout_user' %}">Logout</button>-->
+				<a class="nav-link" href="{% url 'home:logout_user' %}">Logout</a>
+            </div>
+				</div>
+        </header>
+		  </div>
+
+      </div>
+
+    
+</div>
+<nav class="navbar navbar-default sidebar" role="navigation">
+    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+				<li><div id="datepicker"></div></li>
+                <li class="active"><a href="#">Mark Attendance</a></li>
+                <li ><a href="#">Students Reports </a></li>
+                <li ><a href="#">Create Appointments</a></li>
+                <li ><a href="#">Mentor List</a></li>
+                <li ><a href="{% url 'home:empindex' %}">Home</a></li>
+                
+            </ul>
+       
+    </div>
+</nav>
+<div class="container" >
+<div class="align-middle">
+  
+  <form class="form-wrapper" style="text-align: center;">
+  <h3>Search Students here</h3>
+  <input type="text" id="search" placeholder="Search for..." required>
+  <input type="submit" value="Go" id="submit">
+  </form>
+ </div>
+
+    <div>
+<table class="table table-striped table-bordered table-hover">
+<thead>
+<tr class="bg-info">
+<th>Student ID</th>
+<th>Student Name</th>
+<th>Student Grade</th>
+<th>Student School Name</th>
+</tr>
+</thead>
+<tbody>
+{% for Student_list in home %}
+<tr>
+<td>{{ Student_list.Student_id }}</td>
+<td>{{ Student_list.Student_name }}</td>
+<td>{{ Student_list.Student_grade }}</td>
+<td>{{ Student_list.School }}</td>
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+</div>
+{% endif %}
+</body>

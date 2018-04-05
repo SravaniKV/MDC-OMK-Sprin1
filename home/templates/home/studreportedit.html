@@ -1,0 +1,9 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+    <h1>Edit Student Report</h1>
+    <form method="POST" class="student-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default btn-primary">Update</button>
+    </form>
+{% endblock %}

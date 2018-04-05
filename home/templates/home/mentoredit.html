@@ -1,0 +1,9 @@
+{% extends 'home/empindex.html' %}
+
+{% block content %}
+    <h1>Edit Mentor</h1>
+    <form method="POST" class="mentor-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-primary">Update</button>
+    </form>
+{% endblock %}

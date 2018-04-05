@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>OMAHA MENTOR FOR KIDS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <header class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">OMK</h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="#">Home</a>
+                <a class="nav-link" href="{% url 'home:about' %}">About Us</a>
+                <a class="nav-link" href="{% url 'home:login_user' %}">Login</a>
+                  <a class="nav-link" href="{% url 'home:donation' %}">Donate</a>
+                <a class="nav-link" href="{% url 'home:location' %}">Locate Us</a>
+              </nav>
+            </div>
+          </header>
+
+            <main role="main" class="inner cover">
+  <h1 class="cover-heading">OMAHA MENTOR FOR KIDS</h1>
+  <p class="lead"></p>
+  <p class="lead">
+    <a href="{% url 'home:about' %}" class="btn btn-lg btn-secondary">Learn more</a>
+  </p>
+</main>
+
+
+            <footer class="mastfoot">
+            <div class="inner">
+              <p>Contact Us at  <a href="omkidsorg@gmail.com">omkidsorg@gmail.com </a>.</p>
+            </div>
+          </footer>
+
+        </div>
+
+      </div>
+      {% block body %}
+      {% endblock %}
+    </div>
+
+  </body>
+</html>
