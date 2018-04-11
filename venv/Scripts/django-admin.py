@@ -1,4 +1,4 @@
-#!C:\python2018\OMK_PART2\venv\Scripts\python.exe
+#!C:\python2018\MDC-OMK-Sprin1\venv\Scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":

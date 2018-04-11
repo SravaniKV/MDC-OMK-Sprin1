@@ -43,6 +43,6 @@ urlpatterns = [
     url(r'^archive/$', views.archive, name='archive'),
     url(r'^location/$', views.location, name='location'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
-    url(r'^donate/$', views.donation, name='donation'),
+    url(r'^give/$', views.give, name='give'),
     url(r'^thankyou/$', views.thankyou, name='thankyou')
         ]

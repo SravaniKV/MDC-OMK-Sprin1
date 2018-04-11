@@ -362,9 +362,9 @@ def location(request):
     {'home': location})
 
 
-def donation(request):
-    return render(request, 'home/donate.html',
-    {'home': donation})
+def give(request):
+    return render(request, 'home/give.html',
+    {'home':give})
 
 def thankyou(request) :
         return render(request, 'home/thankyou.html',

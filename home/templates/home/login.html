@@ -10,7 +10,7 @@
             <div class="panel panel-default">
                 <div class="lead">
 				<div class="col-sm-offset-2 col-sm-12">
-                    <h3>Log In</h3><br/>
+                    <h3>Log In </h3><br/>
 				</div>
                     {% if error_message %}
                         <p><strong>{{ error_message }}</strong></p>
@@ -40,10 +40,7 @@
                 <div class="col-sm-offset-2 col-sm-12">
                     <a href="{% url 'password_reset' %}"> Reset Password</a> here.
                 </div>
-                <p><strong>-- OR --</strong></p>
 
-                    <a href="{% url 'social:begin' 'twitter' %}" class="btn-sm btn-info"> Login with Twitter</a>
-                </div>
             </div>
         </div>
     </div>
