@@ -25,9 +25,6 @@ from django.views.generic import CreateView
 from home.utils import send_twilio_message
 import geocoder
 import logging
-
-from googlevoice import Voice
-
 import sys
 from sendsms import api
 import fileinput

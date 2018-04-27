@@ -56,7 +56,9 @@
             </div>
   </nav>
 </div>
-<form action="." class="form-horizontal" method="post" >{% csrf_token %}
+<form action="." class="form-horizontal" method="post" style="
+    text-align: center;
+">{% csrf_token %}
 
         <div class="form-group">
             <label class="col-sm-2 control-label" for="inputEmail3">Select School Address :</label>
@@ -68,14 +70,16 @@
 
                 {%endfor%}
               </select>
+                 <button class="btn btn-default" type="submit">Show Directions</button>
             </div>
+
         </div>
-     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-              <button class="btn btn-default" type="submit">Show Directions</button>
-            <!--<a href="{% url 'home:emphome' %}" class="row"><span class="btn btn-primary">Submit</span></a> -->
-        </div>
-    </div>
+     <!--<div class="form-group">-->
+        <!--<div class="col-sm-offset-2 col-sm-10">-->
+              <!--<button class="btn btn-default" type="submit">Show Directions</button>-->
+            <!--&lt;!&ndash;<a href="{% url 'home:emphome' %}" class="row"><span class="btn btn-primary">Submit</span></a> &ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
 
 
     {%if mapvalue%}
