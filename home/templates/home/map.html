@@ -1,0 +1,88 @@
+{% load staticfiles %}
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"/>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> -->
+  <!--<link href="{% static 'css/style.css' %}" rel="stylesheet">-->
+  <!--<link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+  <!-- Page level plugin CSS-->
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+              $( function() {
+                  $("#datetimepicker1").datetimepicker();
+              });
+</script>
+  <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker12').datetimepicker({
+                inline: true,
+                sideBySide: true
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="wrapper">
+  <!-- Navigation-->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home:mentorhome' %}">Omaha Mentor for Kids</a>
+            </div>
+  </nav>
+</div>
+<form action="." class="form-horizontal" method="post" >{% csrf_token %}
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputEmail3">Select School Address :</label>
+            <div class="col-sm-10">
+                <select name="element.school">
+                    {% for element in students %}
+                    <option value={{ element.School_ID }}> {{ element.School }}
+                    </option>
+
+                {%endfor%}
+              </select>
+            </div>
+        </div>
+     <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-default" type="submit">Show Directions</button>
+            <!--<a href="{% url 'home:emphome' %}" class="row"><span class="btn btn-primary">Submit</span></a> -->
+        </div>
+    </div>
+
+
+    {%if mapvalue%}
+
+   <iframe width="600" height="450" frameborder="0" style="border:0" src={{src}} allowfullscreen></iframe>
+    {% endif %}
+</form>
+
+</body>
+</html>

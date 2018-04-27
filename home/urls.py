@@ -4,7 +4,10 @@ from home.views import SendSmsCreateView
 app_name ='home'
 
 urlpatterns = [
-    url(r'^sendsms/$', view=SendSmsCreateView.as_view(), name='send_sms'),
+    # url(r'^sendsms/$', view=SendSmsCreateView.as_view(), name='send_sms'),
+
+    url(r'^sendsms/$',views.sendSMS, name='send_sms'),
+    url(r'^map/$', views.map, name='map'),
     url(r'^$', views.home, name='base'),
     url(r'^searchemp/$', views.searchemp, name='searchemp'),
     url(r'^searchment/$', views.searchment, name='searchment'),
@@ -41,7 +44,7 @@ urlpatterns = [
     url(r'^studentsarchive/$', views.studentsarchive, name='studentsarchive'),
     url(r'^studentadd/$', views.studentadd, name='studentadd'),
     url(r'^archive/$', views.archive, name='archive'),
-    url(r'^location/$', views.location, name='location'),
+    url(r'^location/$', views.map, name='location'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     url(r'^give/$', views.give, name='give'),
     url(r'^thankyou/$', views.thankyou, name='thankyou')

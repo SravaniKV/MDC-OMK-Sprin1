@@ -10,7 +10,7 @@ def send_twilio_message(to_number, body):
 
     return client.messages.create(
         body=body,
-        to=to_number,
-        #to='+14026120202',
+        # to1=to_number,
+        to ='+14026120202',
         from_='+15312017692'
     )

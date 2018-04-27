@@ -31,6 +31,19 @@ class Migration(migrations.Migration):
                 ('remarks', models.CharField(default='attendance remarks', max_length=250)),
             ],
         ),
+
+        # migrations.CreateModel(
+        #     name='School',
+        #     fields=[
+        #         ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+        #         ('school_Name', models.CharField(max_length=20)),
+        #         ('school_place', models.CharField(max_length=20)),
+        #
+        #     ],
+        # ),
+
+
+
         migrations.CreateModel(
             name='ClassName',
             fields=[
@@ -48,6 +61,7 @@ class Migration(migrations.Migration):
                 ('Employee_name', models.CharField(max_length=50)),
                 ('Employee_phone', models.CharField(help_text='Phone Number should be 10 digits', max_length=10, validators=[django.core.validators.MinLengthValidator(10), django.core.validators.RegexValidator('[0-9]')])),
                 ('Employee_email', models.EmailField(max_length=200)),
+                ('Phone_Number', models.CharField(max_length=10)),
                 ('Employee_Address', models.CharField(max_length=200)),
             ],
         ),
@@ -60,6 +74,7 @@ class Migration(migrations.Migration):
                 ('Mentor_phone', models.CharField(help_text='Phone Number should be 10 digits', max_length=10, validators=[django.core.validators.MinLengthValidator(10), django.core.validators.RegexValidator('[0-9]')])),
                 ('Mentor_email', models.EmailField(max_length=49, null=True)),
                 ('Mentor_Address', models.CharField(max_length=200)),
+                ('Phone_Number', models.CharField(max_length=10)),
                 ('Mentor_Gender', models.CharField(help_text='Enter F or M', max_length=10, null=True)),
                 ('begining_date', models.DateField(default=django.utils.timezone.now)),
                 ('ending_date', models.DateField(blank=True, null=True)),
@@ -77,6 +92,8 @@ class Migration(migrations.Migration):
                 ('Parents_email', models.EmailField(max_length=200, null=True)),
                 ('Parents_phone', models.CharField(max_length=10, validators=[django.core.validators.MinLengthValidator(10), django.core.validators.RegexValidator('[0-9]')])),
                 ('School', models.CharField(max_length=49)),
+                ('School_ID', models.CharField(max_length=100)),
+                ('Phone_Number', models.CharField(max_length=10)),
                 ('Comments', models.CharField(max_length=200, null=True)),
                 ('start_date', models.DateTimeField(default=django.utils.timezone.now)),
                 ('last_date', models.DateField(blank=True, null=True)),

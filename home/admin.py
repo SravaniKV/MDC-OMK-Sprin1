@@ -15,7 +15,7 @@ class MentorList(admin.ModelAdmin):
 
 class StudentList(admin.ModelAdmin):
     list_display = ('Student_id', 'Student_name', 'Student_Class', 'Student_curr_grade', 'Student_prev_grade', 'Parents_email',
-    'Parents_phone', 'School', 'Men_name', 'Emp_name','Comments', 'start_date', 'last_date')
+    'Parents_phone', 'School','School_ID', 'Men_name', 'Emp_name','Comments', 'start_date', 'last_date')
     search_fields = ('Student_name', 'Student_id', 'School', 'Parents_phone', 'start_date', 'last_date', 'Student_Class')
 
 class ClassNameList(admin.ModelAdmin):
@@ -25,9 +25,13 @@ class ClassNameList(admin.ModelAdmin):
 class  AttendanceList(admin.ModelAdmin):
     list_display = ('stu_name','attend','attend_date','remarks',)
 
+# class SchoolList(admin.ModelAdmin):
+#         list_display = ('school_Name', 'school_place',)
+
 
 admin.site.register(Employee,EmployeeList )
 admin.site.register(Mentor,MentorList)
 admin.site.register(Student, StudentList)
 admin.site.register(ClassName, ClassNameList)
 admin.site.register(Attendance, AttendanceList)
+# admin.site.register(School,SchoolList)
