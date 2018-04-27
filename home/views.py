@@ -27,7 +27,7 @@ import geocoder
 import logging
 
 from googlevoice import Voice
-from googlevoice.util import input
+
 import sys
 from sendsms import api
 import fileinput

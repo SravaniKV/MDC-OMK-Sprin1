@@ -42,14 +42,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="411" column="32" lean-forward="false" selection-start-line="411" selection-start-column="32" selection-end-line="411" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-15084">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/templates/home/map.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="790">
@@ -251,8 +249,8 @@
         <option value="$PROJECT_DIR$/home/urls.py" />
         <option value="$PROJECT_DIR$/home/utils.py" />
         <option value="$PROJECT_DIR$/omk/settings.py" />
-        <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/home/templates/home/sendsms_form.html" />
+        <option value="$PROJECT_DIR$/home/views.py" />
       </list>
     </option>
   </component>
@@ -1001,16 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="411" column="32" lean-forward="false" selection-start-line="411" selection-start-column="32" selection-end-line="411" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/templates/home/sendsms_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -1023,6 +1011,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="790">
           <caret line="24" column="86" lean-forward="false" selection-start-line="24" selection-start-column="86" selection-end-line="24" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15084">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
