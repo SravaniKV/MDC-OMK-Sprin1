@@ -12,7 +12,17 @@ class SendSMSForm(forms.ModelForm):
         model = SendSMS
         fields = ('to_number', 'body')
 
+
+
+
 #twilio
+
+# class School(forms.ModelForm):
+#
+#     class Meta:
+#         model = School
+#         fields = ('school_Name','school_place')
+
 
 class EmployeeForm(forms.ModelForm):
     class Meta:
@@ -31,6 +41,10 @@ class StudentForm(forms.ModelForm):
          model = Student
          fields =('Student_id','Student_name','Student_curr_grade','Student_prev_grade','Student_Class',
                    'Parents_email','Parents_phone','School','Men_name','Emp_name','Comments','start_date','last_date',)
+# class MapForm(forms.ModelForm):
+#     class Meta:
+#         model=Map
+#         fields=('School_Name')
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)

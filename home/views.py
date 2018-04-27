@@ -14,7 +14,7 @@ from django.db.models import *
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.db.models import Q
-from .models import Student,Mentor,Employee
+from .models import Student,Mentor,Employee,SendSMS
 from .forms import StudentForm,UserForm,EmployeeForm,ClassNameForm
 # twillio imports start
 from django.urls import reverse_lazy
@@ -23,9 +23,15 @@ from decimal import Decimal
 from datetime import datetime
 from django.views.generic import CreateView
 from home.utils import send_twilio_message
+import geocoder
+import logging
 
-
-
+from googlevoice import Voice
+from googlevoice.util import input
+import sys
+from sendsms import api
+import fileinput
+from sendsms import message
 def searchemp(request):
     name_query = request.GET.get("name")
     curr_grade_query = request.GET.get("currgrade")
@@ -351,6 +357,21 @@ def studentsarchive(request):
       # return render(request, 'home/studentsarchive.html', {'form': form})
 
 
+def map(request):
+    students=Student.objects.all()
+    mapvalue=False
+    if request.method=='POST':
+        mapvalue=True
+        print(request.POST)
+        schoolID=request.POST.get('element.school')
+        print(schoolID)
+        g = geocoder.ip('me')
+        # print(str(g.latlng).strip("[]"))
+        lats=str(g.latlng).strip("[]").replace(" ","")
+        src="https://www.google.com/maps/embed/v1/directions?origin="+lats+"&destination=place_id:"+schoolID+"&key=AIzaSyBcCqgDCGOBUkwpaj7Pdc0osAS9wUQKyXs"
+        return render(request,'home/map.html',{'students':students,'mapvalue':mapvalue,"schoolID":schoolID,"src":src})
+    return render(request, 'home/map.html', {'students': students,'mapvalue':mapvalue})
+
 def archive(request):
     students = Student.objects.filter(start_date__lte=timezone.now())
     return render(request, 'home/archive.html',
@@ -370,19 +391,62 @@ def thankyou(request) :
         return render(request, 'home/thankyou.html',
                       {'home': thankyou} )
 
+def sendSMS(request):
+    success=False
+    studentList=Student.objects.all()
+    if request.method=='POST':
+        success=True
+        number = request.POST.get('to_number')
+        print('njjj')
+        api.send_sms(body='I can haz txt', from_phone='+14024520413', to=['+14029153381'])
+        from sendsms.message import SmsMessage
+        message = SmsMessage(body='lolcats make me hungry', from_phone='+14024520413', to=['+41791234567'])
+        message.send()
+        body = request.POST.get('body')
+        api.send_sms(body='I can haz txt', from_phone='+14024520413', to=['+14029153381'])
+        # call twilio
+        #
+
+        #
+        # voice = Voice()
+        # voice.login(user, password)
+        # number='4029153381'
+        # message='test1234'
+        # print (number)
+        # number = input('Number to send message to: ') # use these for command method
+        # message = input('Message text: ')
+
+        # voice.send_sms(number, message)
+        sent = send_twilio_message(number, body)
+        # form = SendSMS()
+        # save form
+        # send_sms = form.save()
+        # send_sms.from_number = settings.TWILIO_PHONE_NUMBER
+        # send_sms.sms_sid = sent.sid
+        # send_sms.account_sid = sent.account_sid
+        # send_sms.status = sent.status
+        # send_sms.sent_at = datetime.now()
+        # if sent.price:
+        #     send_sms.price = Decimal(force_text(sent.price))
+        #     send_sms.price_unit = sent.price_unit
+        # send_sms.save()
+        return render (request,'home/sendsms_form.html',{'success':success,'studentList':studentList})
+    return render(request,'home/sendsms_form.html',{'success':success,'studentList':studentList})
+
 class SendSmsCreateView(CreateView):
     model = SendSMS
     form_class = SendSMSForm
     template_name = 'home/sendsms_form.html'
     success_url = reverse_lazy('send_sms')
-
-
+    print('test')
+    # studentList = Student.objects.all()
     def form_valid(self, form):
         number = form.cleaned_data['to_number']
+        logging.debug("Oh hai!")
         body = form.cleaned_data['body']
         # call twilio
         sent = send_twilio_message(number, body)
-
+        form=SendSMS()
         # save form
         send_sms = form.save(commit=False)
         send_sms.from_number = settings.TWILIO_PHONE_NUMBER
@@ -394,6 +458,14 @@ class SendSmsCreateView(CreateView):
             send_sms.price = Decimal(force_text(sent.price))
             send_sms.price_unit = sent.price_unit
         send_sms.save()
-        print (form )
-        return super(SendSmsCreateView, self).form_valid(form)
+        print (form)
+        # return super(SendSmsCreateView, self).form_valid(form)
+        # return render(request, 'home/thankyou.html',
+        #               {'home': thankyou})
+
+    def get_context_data(self, **kwargs):
+        context = super(SendSmsCreateView, self).get_context_data(**kwargs)
+        # here's the difference:
+        context['studentList'] = Student.objects.all()
+        return context
 

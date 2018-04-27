@@ -18,6 +18,7 @@ class Employee(models.Model):
                                       help_text="Phone Number should be 10 digits")
     Employee_email = models.EmailField(max_length=200)
     Employee_Address= models.CharField(max_length=200)
+    Phone_Number=models.CharField(max_length=10,null=True)
 
 
     def __str__(self):
@@ -33,6 +34,7 @@ class Mentor(models.Model):
     Mentor_Address=models.CharField(max_length=200)
     Mentor_Gender=models.CharField(max_length=10, null = True ,help_text="Enter F or M")
     begining_date = models.DateField(default=timezone.now)
+    Phone_Number=models.CharField(max_length=10,null=True)
     ending_date = models.DateField(blank=True, null=True)
 
     def created(self):
@@ -46,6 +48,9 @@ class Mentor(models.Model):
     def __str__(self):
        return str(self.Mentor_name)
 
+# class School(models.Model):
+#     school_Name=models.CharField(max_length=40)
+#     school_place=models.CharField(max_length=100)
 class Student(models.Model):
      Student_id= models.CharField(max_length=15,unique=True)
      Student_name=models.CharField(max_length=49,null=True)
@@ -55,11 +60,14 @@ class Student(models.Model):
      Parents_email = models.EmailField(max_length=200, null=True)
      Parents_phone = models.CharField(validators=[MinLengthValidator(10), RegexValidator(regex)], max_length=10)
      School= models.CharField(max_length=49)
+     School_ID=models.CharField(max_length=100)
      Men_name =models.ForeignKey(Mentor,related_name='Menemail')
      Emp_name= models.ForeignKey(Employee, related_name='Empemail')
      Comments=models.CharField(max_length=200, null=True)
+     Phone_Number=models.CharField(max_length=10,null=True)
      start_date = models.DateTimeField(default=timezone.now)
      last_date = models.DateField(blank=True, null=True)
+
 
 
      def create(self):
@@ -113,8 +121,9 @@ class Attendance(models.Model):
     def create(self):
         self.attend_date = timezone.now()
         self.save()
-
-
+# class Map(models.Model):
+#     School_Name=models.CharField(max_length=34)
+#
 
 # twilio
 
@@ -128,3 +137,4 @@ class SendSMS(models.Model):
     delivered_at = models.DateTimeField(null=True, blank=True)
     status = models.CharField(max_length=20, default="", blank=True)
     body= models.CharField(max_length=200, default="", blank = True)
+
