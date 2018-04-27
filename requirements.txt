@@ -1,3 +1,4 @@
+
 amqp==2.2.2
 arrow==0.10.0
 asn1crypto==0.24.0
@@ -35,6 +36,7 @@ django-taggit==0.21.3
 django-timezone-field==2.0
 django-widget-tweaks==1.4.1
 djangorestframework==3.7.1
+django-paypal==0.2.5
 Flask==0.12.2
 future==0.16.0
 gunicorn==19.7.1

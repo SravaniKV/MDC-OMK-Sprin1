@@ -40,7 +40,7 @@
             <br></br>
             <br></br>
 
-            <ul style="list-style-type:square">
+            <br style="list-style-type:square">
           <h3>Donate</h3>
             <p>Partnership 4 Kids is dedicated to keeping students engaged in learning from kindergarten to careers, but we need your help!
                 Without the generosity of supporters like you, our student programs could not exist. You can become a P4K contributing partner in a variety of ways, but regardless of how you choose to give, your contribution will keep more deserving students continuing on the pathway to success!</p>
@@ -48,15 +48,11 @@
               <br/>
             <p><strong>-- Click Donate button to make a Donation --</strong></p>
             <ul style="list-style-type:square">
-            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="B2MCLL8XU7FWA">
-                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
+            <a href="{% url 'shop:product_list'  %}" class="btn-sm btn btn-warning "> Donate</a>
             </ul>
-
+            <br></br>
             <p>---OR---</p>
+
             <div class="cover-container">
          <h3>Choose to Volunteer</h3>
             <p> Relationships are truly the HEART of the matter and one caring adult is all it takes to get started!

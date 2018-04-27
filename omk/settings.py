@@ -56,6 +56,11 @@ INSTALLED_APPS = [
     'home',
     'django.contrib.admin',
     'social_django',
+    'cart',
+    'shop',
+    'orders',
+    'payment',
+    'paypal.standard.ipn',
  #'social.apps.django_app.default',
 ]
 
@@ -199,3 +204,9 @@ SOCIAL_AUTH_TWITTER_SECRET = 'pOwX6LmZiPq5Z40iKrGoYNZ9dyLPEvZ3oHjEvSfrxD580wpyvb
 TWILIO_ACCOUNT_SID = 'ACecb6bc927ff32ab8e3958168cfd394dd'
 TWILIO_AUTH_TOKEN = 'e9a6f27e842c331b8c0a814e28d10627'
 TWILIO_PHONE_NUMBER = '+15312017692'
+
+# donations
+
+CART_SESSION_ID = 'cart'
+PAYPAL_RECEIVER_EMAIL = 'vinodmalviya-facilitator@gmail.com'
+PAYPAL_TEST = True

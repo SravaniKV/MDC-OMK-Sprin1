@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
 from django.contrib.auth import views as auth_views
+from shop.views import product_list
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -38,4 +39,11 @@ urlpatterns = [
     url(r'^reset/done/$', auth_views.password_reset_complete, name='password_reset_complete'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     url(r'^emphome/$', view=SendSmsCreateView.as_view(), name='send_sms'),
+    url(r'^paypal/', include('paypal.standard.ipn.urls')),
+    url(r'^payment/', include('payment.urls', namespace='payment')),
+    url(r'^shop/', include('shop.urls', namespace='shop')),
+    url(r'^cart/', include('cart.urls', namespace='cart')),
+    url(r'^orders/', include('orders.urls', namespace='orders')),
+    url(r'^shop/$', product_list, name='product_list'),
+
     ]
