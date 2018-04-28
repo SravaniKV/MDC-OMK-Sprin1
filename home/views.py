@@ -26,7 +26,7 @@ from home.utils import send_twilio_message
 import geocoder
 import logging
 import sys
-#from sendsms import api
+from sendsms import api
 import fileinput
 #from sendsms import message
 def searchemp(request):
@@ -90,6 +90,10 @@ def index(request):
 def empindex(request):
     return render(request, 'home/empindex.html',
                   {'empindex': empindex})
+
+def tasks(request):
+    return render(request, 'home/trello.html',
+                  {'tasks': tasks})
 
 def emphome(request):
     students = Student.objects.filter(Emp_name__Employee_name=request.user.username).order_by('Student_name')

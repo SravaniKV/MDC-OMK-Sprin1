@@ -1,0 +1,32 @@
+{% extends 'home/empindex.html' %}
+{% block content %}
+<div class="container-fluid">
+<div class="align-middle">
+
+  <!--<form class="form-wrapper" style="text-align: center;" role="search" method="get" action ="{% url 'home:emphome' %}">
+  <h3>Search Students here</h3>
+  <input type="text" id="search"  name="q" value="{{ request.GET.q }}" placeholder="Search for..." required>
+  <input type="submit" value="Go" id="submit">
+  </form>-->
+
+            <form class ="navbar-form" style="text-align: center;" role="search" method="get" action="{% url 'home:searchemp' %}">
+                <div class="form-group">
+
+                    <!--<input type="text" class="form-control" name="currgrade" value="{{ request.GET.currgrade }}" placeholder="Search by Current grade" >-->
+                    <!--<input type="text" class="form-control" name="prevgrade" value="{{ request.GET.prevgrade }}" placeholder="Search by Previous grade" >-->
+                </div> &nbsp;
+
+            </form>
+
+ </div>
+ <br/>
+
+     <li>
+             <iframe width="1000" height="900" frameborder="0" style="border:0" src="https://trello.com/b/A8MW95Di.html" allowfullscreen> </iframe>
+          </li>
+
+ </tbody>
+</table>
+</div>
+</div>
+{% endblock %}

@@ -44,6 +44,7 @@ urlpatterns = [
     url(r'^studentsarchive/$', views.studentsarchive, name='studentsarchive'),
     url(r'^studentadd/$', views.studentadd, name='studentadd'),
     url(r'^archive/$', views.archive, name='archive'),
+    url(r'^tasks/$', views.tasks, name='tasks'),
     url(r'^location/$', views.map, name='location'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     url(r'^give/$', views.give, name='give'),
