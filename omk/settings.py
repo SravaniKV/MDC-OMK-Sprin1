@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'orders',
     'payment',
     'paypal.standard.ipn',
+    'rest_framework',
  #'social.apps.django_app.default',
 ]
 

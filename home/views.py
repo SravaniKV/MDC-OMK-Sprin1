@@ -28,6 +28,9 @@ import logging
 import sys
 from sendsms import api
 import fileinput
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import CustomerSerializer
 #from sendsms import message
 def searchemp(request):
     name_query = request.GET.get("name")
