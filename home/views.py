@@ -465,4 +465,10 @@ class SendSmsCreateView(CreateView):
         # here's the difference:
         context['studentList'] = Student.objects.all()
         return context
+class StudentList(APIView):
+
+    def get(self,request):
+        customers_json = Student.objects.all()
+        serializer = CustomerSerializer(customers_json, many=True)
+        return Response(serializer.data)
 

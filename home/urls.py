@@ -7,6 +7,7 @@ urlpatterns = [
     # url(r'^sendsms/$', view=SendSmsCreateView.as_view(), name='send_sms'),
 
     url(r'^sendsms/$',views.sendSMS, name='send_sms'),
+url(r'^student_json/', views.Student_list.as_view()),
     url(r'^map/$', views.map, name='map'),
     url(r'^$', views.home, name='base'),
     url(r'^searchemp/$', views.searchemp, name='searchemp'),
