@@ -115,7 +115,7 @@ watson-developer-cloud==1.2.0
 wcwidth==0.1.7
 WeasyPrint==0.24
 webencodings==0.5.1
-Werkzeug==0.12.2
+Werkzeug==0.15.3
 whitenoise==3.3.0
 yahoo-finance==1.4.0
 zope.interface==4.4.3
