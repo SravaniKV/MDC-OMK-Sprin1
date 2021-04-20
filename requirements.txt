@@ -3,7 +3,7 @@ amqp==2.2.2
 arrow==0.10.0
 asn1crypto==0.24.0
 attrs==17.4.0
-autobahn==18.3.1
+autobahn==20.12.3
 Automat==0.6.0
 automium==0.2.6
 automium-web==0.1.1
